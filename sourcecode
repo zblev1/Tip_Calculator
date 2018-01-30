@@ -1,0 +1,42 @@
+//*********************************************************************************************
+// Author: Zachary Blevins
+//
+// Design a program that calculates the total amount of a meal purchased at a restaurant. 
+// The program should ask the user to enter the charge for the food, and then calculate the
+// amount of a 15% tip and 7% sales tax. Display each of these amounts and the total.
+//*********************************************************************************************
+
+#include <iostream>
+#include <iomanip> // Needed to use the setprecision command.
+using namespace std;
+
+int main()
+{
+	// Declare variables.
+	double tax, tip, food, total;
+	const double taxRate = 0.07;
+	const double tipRate = 0.15;
+
+	// Display prompt for cost.
+	cout << "Cost of menu item(s). $";
+
+	// Cost input
+	cin >> food;
+
+	// Calculate amount for tip.
+	tip = food * tipRate;
+
+	// Calculate amount for taxes.
+	tax = food * taxRate;
+
+	// Calculate total meal cost.
+	total = food + tip + tax;
+	
+	// Display cost, tip, tax, and total.
+	cout << fixed << setprecision(2) << endl; // This was my solution for rounding.
+	cout << "Tip: $" << tip << endl;
+	cout << "Tax: $" << tax << endl;
+	cout << "Total: $" << total << endl;
+	
+	system("pause"); // Allows the program to display output before closing
+} 
